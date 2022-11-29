@@ -1,14 +1,10 @@
-
-create table student
-(rollno int primary key,name varchar(30)not null,
-age int check(age>18),
-mobile bigint unique,
-city varchar(30)default'Pune');
-insert into student values(1,'Sakshi',21,98705888,'Mumbai');
-insert into student(rollno,name,age,mobile)values(2,'Pooja',20,95874566);
-insert into student(rollno ,name) values(100,'Sneha');
-select * from student;
-update student set city='Pune' where name='Pooja';
-delete from student where rollno=2;
-
-
+create table batch
+(batchid int primary key,
+batchname varchar(30));
+alter table student add batchid int;
+select * from batch;
+insert into batch values(1,'Wipro'),(2,'HCL');
+alter table student1 add batchid int constraint fkbid foreign key(batchid)references batch(batchid);
+update student1 set batchid=1;
+delete from batch where batchid=4;
+delete from batch where batchid=5;
