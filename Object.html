@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <script>
+        var student = {
+            rollno: 1,
+            name: "Om",
+            English: 78,
+            Hindi: 67,
+            Marathi: 80,
+            print: function () {
+                return "Student Details " + this.rollno + " " + this.name + "  " + this.English + " " + this.Hindi + " " + this.Marathi;
+            },
+            calculateTotalMarks: function () {
+                var Totalmarks = this.English + this.Hindi + this.Marathi;
+                this.Totalmarks = this.English + this.Hindi + this.Marathi;
+                return this.Totalmarks;
+            },
+            calculatePercentage: function () {
+                var percentage = this.Totalmarks /300;
+                this.perc = percentage * 100;
+                
+        
+                return this.perc;
+            }
+        };
+
+        console.log(student.print());
+        console.log(student.calculateTotalMarks());
+        console.log(student.calculatePercentage());
+    </script>
+    <script>
+        var product = {
+            id: 1,
+            name: "Mouse",
+            price: 250,
+            print: function () {
+                return "Product Details " + this.id + " " + this.name + "  " + this.price;
+            },
+            calculatePrice: function () {
+                var disc = this.price*10/100;
+                this.discprice =this.price- disc;
+                return this.discprice;
+            }
+        };
+
+        console.log(product.print());
+        console.log(product.calculatePrice());
+
+    </script>
+    <script>
+
+        var products =
+            [
+                {
+                    id: 1,
+                    name: "Mouse",
+                    price: 250,
+                },
+                {
+                    id: 2,
+                    name: "Keyboard",
+                    price: 550,
+                },
+                {
+                    id: 3,
+                    name: "Printer",
+                    price: 2250,
+                },
+                {
+                    id: 4,
+                    name: "Scanner",
+                    price: 2850,
+                },
+                {
+                    id: 5,
+                    name: "Pendrive",
+                    price: 650,
+                }
+            ]
+        console.log(products);
+
+        var data = "<table border='1'><tr><th>Id</th><th>Name</th><th>Price</th></tr>";
+        for (var i = 0; i < products.length; i++) {
+            data += "<tr><td>" + products[i].id + "</td><td>" + products[i].name + "</td><td>" +
+                products[i].price + "</td></tr>";
+        }
+        data += "</table>";
+        document.getElementById("div1").innerHTML = data;
+
+    </script>
+
+
+
+</body>
+</html>

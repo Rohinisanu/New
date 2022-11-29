@@ -1,0 +1,58 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+   <div id="div1">
+
+   </div>
+    <script>
+        let promise = new Promise(function (resolve, reject) {
+
+            let req = new XMLHttpRequest();
+            req.open("GET", "https://dummyjson.com/products/1");
+            req.onload = function () {
+                if (req.status == 200) {
+                    resolve(req.response);
+                }
+                else {
+                    reject("file not found");
+                }
+            };
+            req.send();
+        });
+
+        promise.then(function (data) {
+            console.log(data);
+            <table border="1", cellpadding="10">
+                <caption>Products</caption>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Title</th>
+                        <th>Price</th>
+                       
+                    </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>IPhone</td>
+                    <td>80000</td>
+                   
+                </tr>
+
+    </tbody>
+</table >
+           document.getElementById("div1").innerHTML = data;
+
+        }, function (error) {
+            console.log(error);
+        });
+       
+    </script>
+</body>
+</html>

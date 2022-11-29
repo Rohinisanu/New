@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    Enter a number<input type="text" id="t1" /><br />
+    Enter a number<input type="text" id="t2" /><br />
+    Result<input type="text" id="t3" /><br />
+    <input type="button" value="Addition" onclick="addition()" />
+    <input type="button" value="Subtraction" onclick="subtraction()" />
+    <input type="button" value="Multiplication" onclick="mul()" />
+    <input type="button" value="Division" onclick="div()" />
+    <input type="button" value="Mod" onclick="mod()" />
+    <input type="button" value="Square" onclick="square()" />
+    <script>
+        function addition() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var sum = parseInt(a) + parseInt(b);
+            document.getElementById("t3").value = sum;
+        }
+        function subtraction() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var sub = parseInt(a) - parseInt(b);
+            document.getElementById("t3").value = sub;
+        }
+        function mul() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var mul= parseInt(a) * parseInt(b);
+            document.getElementById("t3").value = mul;
+        }
+        function div() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var div = parseInt(a) / parseInt(b);
+            document.getElementById("t3").value = div;
+        }
+        function mod() {
+            var a = document.getElementById("t1").value;
+            var b = document.getElementById("t2").value;
+            var mod = parseInt(a) % parseInt(b);
+            document.getElementById("t3").value = mod;
+        }
+        function square() {
+            var a = document.getElementById("t1").value;
+            
+            var square= parseInt(a) * parseInt(a);
+            document.getElementById("t3").value = square;
+        }
+        
+    </script>
+
+</body>
+</html>

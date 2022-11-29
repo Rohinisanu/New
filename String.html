@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <div id="div2">
+
+    </div>
+    <script>
+        var text = "India is my country";
+
+        console.log(text.charAt(4));
+        var text2 = "Hello";
+
+        var result = text.concat(" ", text2, " ", "I love my India");
+        console.log(result);
+        console.log(result.length);
+
+        var txt = text.slice(3, 9);
+
+        var data = text.split(" ");
+        var data = text.split(" ", 2);
+        console.log(data);
+        console.log(txt);
+        console.log(text.toUpperCase());
+        console.log(text.toLowerCase());
+        text.trim();
+        document.getElementById("div1").innerHTML = data;
+    </script>
+    <script>
+
+        var num = 85.768;
+
+        var text = num.toString();
+
+        var no = num.toFixed(2);
+        console.log(no);
+        document.getElementById("div2").innerHTML = no;
+    </script>
+
+</body>
+</html>

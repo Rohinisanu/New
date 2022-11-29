@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <div id="div2">
+
+    </div>
+    <div id="div3">
+        </div>
+
+        <script>
+            var nums = [1, 2, 6, 7, 10, 15];
+            console.log(nums);
+            var data = "<ol type='i'>";
+
+            for (var i = 0; i < nums.length; i++) {
+                data += "<li>" + nums[i] + "</li>";
+            }
+            data += "</ol>";
+            console.log(data);
+            nums.push(50);
+            nums.unshift(0);
+            nums.pop();
+            nums.shift();
+            nums.splice(1, 0, 55);
+            nums.splice(2, 1, 100, 101);
+            nums.sort();
+            nums.reverse();
+            var newNums = nums.slice(1, 3);
+            console.log(newNums);
+            document.getElementById("div1").innerHTML = data;
+
+            var names = ["Atul", "Rajesh", "Kishor", "Ajay", "Amol"];
+
+            var data2 = "<ol>";
+            names.forEach(myFunction);
+            data2 += "</ol>";
+            function myFunction(value) {
+                data2 += "<li>" + value + "</li>";
+            }
+            document.getElementById("div2").innerHTML = data2;
+
+            var nos = [25, 55, 29, 77, 99];
+
+            var data3 = "<ol>";
+            nos.forEach(myfunction2);
+            data3 += "</ol>";
+
+            function myfunction2(value) {
+                if (value > 60) {
+                    data3 += "<li>" + value + "</li>";
+                }
+            }
+            document.getElementById("div3").innerHTML = data3;
+
+        </script>
+</body>
+</html>

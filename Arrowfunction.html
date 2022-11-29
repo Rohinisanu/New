@@ -1,0 +1,127 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <div id="div1">
+
+    </div>
+    <div id="div2">
+
+    </div>
+    <div id="div3">
+
+    </div>
+    <script>
+        let Add = (a, b) => a + b;
+        console.log(Add(10, 20));
+        var str = (name) => { return "Hello " + name; }
+        console.log(str(name));
+        var test = (a, b) => {
+
+            var m = a * b;
+            return m;
+        }
+        console.log(test(20, 10));
+        var emp = {
+            id: 1,
+            name: "Rohini",
+            salary: 30000,
+
+            print: () => {
+                return "Emp details " + emp.id + " " + emp.name + " " + emp.salary;
+            }
+        }
+
+        console.log(emp.print());
+        console.log(JSON.stringify(emp));
+        console.log(Object.values(emp));
+        var fruits = { apple: 200, orange: 250, banana: 100 };
+
+        var text = "";
+        for (let [key, value] of Object.entries(fruits)) {
+
+            text += key + " " + value + "<br/>";
+        }
+        document.getElementById("div1").innerHTML = text;
+
+        var person = {
+
+            print: function (city, country) {
+                return this.firstname + "  " + this.lastname + " " + city + " " + country;
+            }
+        }
+
+        var emp = {
+            firstname: "fname",
+            lastname: "lname"
+        }
+        var customer = {
+            firstname: "cfname",
+            lastname: "clname"
+        }
+
+        console.log(person.print.call(emp));
+        console.log(person.print.call(customer));
+        console.log(person.print.call(emp, "Pune", "India"));
+        console.log(person.print.apply(emp, ["Pune", "India"]));
+
+        var person = {
+            Fname: "pfname",
+            Lname: "plname",
+            print: function (city, country) {
+                return this.firstname + "  " + this.lastname + " " + city + " " + country;
+            }
+        }
+
+        var emp = {
+            firstname: "fname",
+            lastname: "lname"
+        }
+        var customer = {
+            firstname: "cfname",
+            lastname: "clname"
+        }
+
+        var result = person.print.bind(customer);
+        console.log(result());
+
+        function add(a, b, mycallbackfunc) {
+            var sum = a + b;
+            mycallbackfunc(sum);
+        }
+
+        add(20, 50, display);
+
+
+        function display(result) {
+            document.getElementById("div2").innerHTML = result;
+        }
+        function display() {
+            document.getElementById("div2").innerHTML = "Hello to all";
+        }
+
+        display();
+
+        setTimeout(display, 5000);
+
+
+        function showTime() {
+            let d = new Date();
+
+            let res = d.getHours() + " :" + d.getMinutes() + " :" + d.getSeconds();
+            document.getElementById("div3").innerHTML = res;
+        }
+
+        showTime();
+
+        setInterval(showTime, 10000);
+
+
+
+    </script>
+</body>
+</html>
